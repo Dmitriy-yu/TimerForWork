@@ -94,6 +94,50 @@ namespace TimerForWork
  
         }
 
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            textBox1.Select();//добавить информацию в ListBox из textBox
+            listBox1.Items.Add(textBox1.Text);
+        }
+
+        private void button4_Click(object sender, EventArgs e)//метод загрузки данных из ListBox
+        {
+            const string sPath = "save.txt";
+
+            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
+            foreach (var item in listBox1.Items)
+            {
+                SaveFile.WriteLine(item);
+            }
+
+            SaveFile.Close();
+
+            MessageBox.Show("Programs saved!");
+        }
+
+        private void button5_Click(object sender, EventArgs e)//метод возврата данных из папки
+        {
+            AddToListBox();
+          
+        }
+
+        private void AddToListBox()
+        {
+            listBox1.Items.Clear();
+            using (System.IO.StreamReader sr = new System.IO.StreamReader("C:save.txt"))
+            {
+                while (!sr.EndOfStream)
+                {
+                    listBox1.Items.Add(sr.ReadLine());
+                }
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             activ = true;
@@ -106,12 +150,14 @@ namespace TimerForWork
             timer1.Interval = 100;
             timer2.Interval = 1000;
             button1.MouseEnter += (s, e) =>
-                button1.BackColor = Color.Green;
+            {
+                button1.BackColor = Color.Green;//цвет кнопки Start
+            };
             button1.MouseLeave += (s, e) =>
             {
-                button1.BackColor = Color.FromKnownColor(KnownColor.Control);
+                button1.BackColor = Color.FromKnownColor(KnownColor.Control);//цвет кнопки при не наведении мыши
             }; 
-            button3.MouseEnter += (s, e) =>
+            button3.MouseEnter += (s, e) => //цвет кнопки
                 button3.BackColor = Color.Green;
             button3.MouseLeave += (s, e) =>
             {
@@ -122,6 +168,8 @@ namespace TimerForWork
         {
             ResetTime();
             activ = false;
+            AddToListBox();
         }
+
     }
 }

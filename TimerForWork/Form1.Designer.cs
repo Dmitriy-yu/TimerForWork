@@ -30,6 +30,7 @@ namespace TimerForWork
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -42,6 +43,12 @@ namespace TimerForWork
             this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -152,11 +159,73 @@ namespace TimerForWork
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 118);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(175, 134);
+            this.listBox1.TabIndex = 10;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(204, 232);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(163, 23);
+            this.buttonDelete.TabIndex = 11;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(204, 148);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(163, 23);
+            this.buttonAdd.TabIndex = 12;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(204, 122);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(163, 20);
+            this.textBox1.TabIndex = 13;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(204, 177);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(163, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Save";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(204, 206);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(163, 23);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Red";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 213);
+            this.BackColor = System.Drawing.Color.Orchid;
+            this.ClientSize = new System.Drawing.Size(383, 270);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -167,6 +236,8 @@ namespace TimerForWork
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Timer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -189,6 +260,12 @@ namespace TimerForWork
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
