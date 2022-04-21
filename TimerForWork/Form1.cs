@@ -57,9 +57,9 @@ namespace TimerForWork
 
         private void StringFormat()
         {
-            label1.Text = Convert.ToString(hour);
-            label3.Text = Convert.ToString(min);
-            label5.Text = String. Format("{0,00}",sec);
+            label1.Text = String.Format("{0:d2}", hour);
+            label3.Text = String.Format("{0:d2}", min);
+            label5.Text = String. Format("{0:d2}",sec);
             label7.Text = Convert.ToString(msec);
         }
         private void button3_Click(object sender, EventArgs e)
@@ -136,9 +136,11 @@ namespace TimerForWork
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+           
+
         }
 
-    
+
 
         private void button1_Click(object sender, EventArgs e)
         {
