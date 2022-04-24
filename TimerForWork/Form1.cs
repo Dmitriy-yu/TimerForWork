@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -98,6 +99,8 @@ namespace TimerForWork
         {
             textBox1.Select();//добавить информацию в ListBox из textBox
             listBox1.Items.Add(textBox1.Text);
+            SoundPlayer sp = new SoundPlayer(@"C:\Users\Долгорукий\source\repos\TimerForWork\TimerForWork\button-22.wav");
+            sp.Play();
         }
 
         private void button4_Click(object sender, EventArgs e)//метод загрузки данных из ListBox
@@ -113,12 +116,17 @@ namespace TimerForWork
             SaveFile.Close();
 
             MessageBox.Show("Programs saved!");
+            SoundPlayer sp = new SoundPlayer(@"C:\Users\Долгорукий\source\repos\TimerForWork\TimerForWork\button-15.wav");
+            sp.Play();
         }
 
         private void button5_Click(object sender, EventArgs e)//метод возврата данных из папки
         {
             AddToListBox();
-          
+            MessageBox.Show("Programs saved!");
+            SoundPlayer sp = new SoundPlayer(@"C:\Users\Долгорукий\source\repos\TimerForWork\TimerForWork\button-22.wav");
+            sp.Play();
+
         }
 
         private void AddToListBox()
@@ -136,6 +144,8 @@ namespace TimerForWork
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            SoundPlayer sp = new SoundPlayer(@"C:\Users\Долгорукий\source\repos\TimerForWork\TimerForWork\button-15.wav");
+            sp.Play();
 
         }
 
