@@ -75,10 +75,10 @@ namespace TimerForWork
             msec = 0;
             min = 0;
             hour = 0;
-            label5.Text = "0";
-            label1.Text= "0";
-            label3.Text = "0";
-            label7.Text = "0";
+            label5.Text = "00";
+            label1.Text= "00";
+            label3.Text = "00";
+            label7.Text = "00";
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -136,11 +136,13 @@ namespace TimerForWork
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-           
 
         }
 
-
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

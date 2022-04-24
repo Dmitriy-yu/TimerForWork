@@ -193,6 +193,8 @@ namespace TimerForWork
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(163, 20);
             this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "         Введите результат";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // button4
             // 
@@ -237,7 +239,9 @@ namespace TimerForWork
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Timer";
             this.Load += new System.EventHandler(this.Form1_Load);
